@@ -1,4 +1,5 @@
 import React from 'react';
+import Burguer from '../../components/burguer'
 
 export default () => (
   <div className="container">
@@ -30,6 +31,14 @@ export default () => (
         }}>
         Escolha o Burguer:
       </div>
+    </div>
+    <div className="row">
+        <Burguer ingredientes={[
+          'alface',
+          'queijo',
+          'ovo',
+          'hamburguer',
+        ]}/>
     </div>
   </div>
 )
