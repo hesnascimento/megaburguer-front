@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import PaoDeCima from './PaoDeCima';
 import PaoDeBaixo from './PaoDeBaixo';
@@ -10,30 +11,36 @@ import Ovo from './Ovo';
 import Queijo from './Queijo';
 
 const mapIngredientes = {
-  alface: <Alface />,
-  bacon: <Bacon />,
-  hamburguer: <CarneDeHamburguer />,
-  ovo: <Ovo />,
-  queijo: <Queijo />,
+  alface: Alface,
+  bacon: Bacon,
+  hamburguer: CarneDeHamburguer,
+  ovo: Ovo,
+  queijo: Queijo,
 };
 
-function renderIngrediente(ingrediente) {
-  const selecionado = mapIngredientes[ingrediente];
-  if (!selecionado) throw Error('Ingrediente inválido');
-  return selecionado;
+function renderIngrediente(ingrediente, index) {
+  const Ingrediente = mapIngredientes[ingrediente];
+  if (!Ingrediente) throw Error('Ingrediente inválido');
+  return <Ingrediente key={index} />;
 }
 
-export default (props) => {
-  const ingredientes = props.ingredientes;
+const burguer = (props) => {
+  const { ingredientes } = props;
   return (
     <div className="row">
       <div className="col-sm">
         <PaoDeCima />
         {
-          ingredientes.map(ingr => renderIngrediente(ingr))
+          ingredientes.map((ingr, ix) => renderIngrediente(ingr, ix))
         }
         <PaoDeBaixo />
       </div>
     </div>
   );
 };
+
+burguer.propTypes = {
+  ingredientes: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+export default burguer;

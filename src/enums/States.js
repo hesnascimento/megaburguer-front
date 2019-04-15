@@ -1,0 +1,6 @@
+export default {
+  INITIAL: 'INITIAL',
+  FETCHING: 'FETCHING',
+  FETCHED: 'FETCHED',
+  ERROR: 'ERROR',
+};
