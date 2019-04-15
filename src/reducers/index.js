@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import ingredientes from './ingredientes';
+import ingredientes from './Ingredientes';
 
 export default combineReducers({
   ingredientes,
