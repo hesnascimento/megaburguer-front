@@ -1,12 +1,7 @@
 import axios from 'axios';
 import T from '../enums/LanchesActionTypes';
 
-if (process.env.NODE_ENV === 'development') {
-  axios.defaults.baseURL = 'http://localhost';
-} else {
-  axios.defaults.baseURL = 'https://api-magaburguer.herokuapp.com/';
-}
-
+axios.defaults.baseURL = process.env.API_URL;
 
 export function ObtemTodosLanches() {
   return (dispatch) => {
