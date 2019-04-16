@@ -50,11 +50,12 @@ export default (state = initialState, action) => {
         lanche: remover,
       };
     case T.SELECT:
+      console.log('Oi cara de boi')
       return {
         ...state,
         state: S.FETCHED,
         lanche: action.payload,
-      }
+      };
     default:
       return state;
   }

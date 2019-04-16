@@ -60,8 +60,9 @@ class SelecionarLanche extends Component {
           </div>
         </div>
         <div className="row no-gutters">
-          {lanches.map(lanche => (
+          {lanches.map((lanche, ix) => (
             <Burguer
+              key={ix}
               ingredientes={lanche.ingredientes}
               nome={lanche.lanche}
               preco={lanche.preco}

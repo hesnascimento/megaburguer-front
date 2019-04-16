@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { ObtemTodosIngredientes } from '../../actions/IngredientesActions'
 import { ObtemTodosLanches } from '../../actions/LanchesActions';
 import SelecionarLanches from './SelecionarLanche';
+import CustomizaLanche from './CustomizarLanche';
 import S from '../../enums/States';
 
 function Main(props) {
@@ -14,10 +15,18 @@ function Main(props) {
     props.dispatch(ObtemTodosLanches());
   }
 
-  return <SelecionarLanches />
+  console.log(props)
+
+  if (Object.keys(props.lanche.lanche).length === 0) {
+    return <SelecionarLanches />
+  } else {
+    return <CustomizaLanche />
+  }
+
 }
 
 export default connect(state => ({
   ingredientes: state.Ingredientes,
   lanches: state.Lanches,
+  lanche: state.Lanche,
 }))(Main);
