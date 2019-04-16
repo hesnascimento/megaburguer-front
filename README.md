@@ -1,4 +1,4 @@
-# megaburguer-fron
+# megaburguer-front
 
 Interface da aplicação MEGABURGUER (https://github.com/hesnascimento/megaburguer)
 Escrito com React + Redux
