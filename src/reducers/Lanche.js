@@ -43,7 +43,9 @@ export default (state = initialState, action) => {
       };
     case T.REMOVE_ITEM:
       const remover = state.lanche;
-      remover.ingredientes.splice(remover.ingredientes.indexOf(action.payload), 1);
+      const posicao = remover.ingredientes.indexOf(action.payload);
+      if (posicao === -1) return state;
+      remover.ingredientes.splice(posicao, 1);
       return {
         ...state,
         state: S.FETCHED,
