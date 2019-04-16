@@ -1,9 +1,13 @@
 import React from 'react';
-import {} from 'react-redux';
+import { connect } from 'react-redux';
+import { ObtemTodosIngredientes } from '../../actions/IngredientesActions'
 import Burguer from './BurguerWrapper';
-import { connect } from 'http2';
+import S from '../../enums/States';
 
 function Main(props) {
+  if(props.ingredientes.state === S.INITIAL) {
+    props.dispatch(ObtemTodosIngredientes());
+  }
   return (
     <div className="container">
       <div className="row">
@@ -54,6 +58,5 @@ function Main(props) {
 }
 
 export default connect(state => ({
-  ingredientes: state.Ingredientes.ingredientes,
-  ingredientesError: '',
+  ingredientes: state.Ingredientes,
 }))(Main);

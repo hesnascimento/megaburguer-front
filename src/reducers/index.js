@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import ingredientes from './Ingredientes';
+import Ingredientes from './Ingredientes';
 
 export default combineReducers({
-  ingredientes,
+  Ingredientes,
 });

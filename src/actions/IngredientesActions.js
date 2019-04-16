@@ -1,7 +1,7 @@
 import axios from 'axios';
 import T from '../enums/ActionTypes';
 
-axios.defaults.baseURL = process.env.API_URL;
+axios.defaults.baseURL = 'https://api-magaburguer.herokuapp.com/';
 
 
 export function ObtemTodosIngredientes() {
