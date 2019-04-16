@@ -1,1 +1,1 @@
-export default 'https://api-magaburguer.herokuapp.com/';
+export default 'https://api-megaburguer.herokuapp.com/';
