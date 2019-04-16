@@ -10,7 +10,7 @@ Escrito com React + Redux
 
 ## Pré instalação
 
-1. Altere o arquivo {projeto}/urlconf.js para o endereço da API
+1. Altere o arquivo {projeto}/src/urlconf.js para o endereço da API
 
 Ex.:
 ```

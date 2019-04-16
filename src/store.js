@@ -7,6 +7,5 @@ export default createStore(
   reducers,
   compose(
     applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
   ),
 );

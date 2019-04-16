@@ -1,6 +1,6 @@
 import axios from 'axios';
 import T from '../enums/LancheActionTypes';
-import urlconf from '../../urlconf'
+import urlconf from '../urlconf'
 
 axios.defaults.baseURL = urlconf;
 
