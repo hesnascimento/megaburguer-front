@@ -66,7 +66,7 @@ class SelecionarLanche extends Component {
               ingredientes={lanche.ingredientes}
               nome={lanche.lanche}
               preco={lanche.preco}
-              selectHandler={this.selecionar(lanche)}
+              selectHandler={this.selecionar(Object.assign(lanche))}
             />
           ))}
         </div>

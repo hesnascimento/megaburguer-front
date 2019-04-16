@@ -2,7 +2,9 @@ import React from 'react';
 
 export default (props) => {
   return (
-    <div className="row">
+    <div className="row" style={{
+      marginBottom: '10px',
+    }}>
       <div className="col-sm-3">
         <button className="btn btn-success" onClick={props.onAddClick}>
           +

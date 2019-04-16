@@ -18,6 +18,7 @@ export default (state = initialState, action) => {
       };
     case T.FETCHED:
       return {
+        ...state,
         state: S.FETCHED,
         valores: action.payload,
         error: null,
@@ -34,15 +35,17 @@ export default (state = initialState, action) => {
         state: S.INITIAL,
       };
     case T.INCLUDE_ITEM:
-      const incluir = state.lanche;
+      const incluir = { ...state.lanche };
       incluir.ingredientes.push(action.payload);
       return {
         ...state,
         state: S.FETCHED,
         lanche: incluir,
       };
+    case T.CLEAR:
+      return initialState;
     case T.REMOVE_ITEM:
-      const remover = state.lanche;
+      const remover = { ...state.lanche };
       const posicao = remover.ingredientes.indexOf(action.payload);
       if (posicao === -1) return state;
       remover.ingredientes.splice(posicao, 1);
@@ -52,11 +55,11 @@ export default (state = initialState, action) => {
         lanche: remover,
       };
     case T.SELECT:
-      console.log('Oi cara de boi')
+    console.log('Oi cara de boi')
       return {
         ...state,
         state: S.FETCHED,
-        lanche: action.payload,
+        lanche: { ...action.payload },
       };
     default:
       return state;

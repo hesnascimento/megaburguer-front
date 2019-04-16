@@ -18,6 +18,26 @@ export function ObtemTodosLanches() {
   };
 }
 
+export function cancelar() {
+  return (dispatch) => {
+    dispatch({ type: T.CLEAR });
+  }
+}
+
+export function enviaLanche(lanche) {
+  return (dispatch) => {
+    dispatch({ type: T.FETCH });
+    axios
+      .post('/api/lanches', lanche)
+      .then((request) => {
+        dispatch({ type: T.FETCHED, payload: request.data });
+      })
+      .catch((err) => {
+        dispatch({ type: T.ERROR, payload: err });
+      });
+  }
+}
+
 export function adicionaItem(item) {
   return (dispatch) => {
     dispatch({ type: T.INCLUDE_ITEM, payload: item });
