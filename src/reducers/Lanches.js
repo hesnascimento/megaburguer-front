@@ -1,8 +1,8 @@
-import T from '../enums/IngredientesActionTypes';
+import T from '../enums/LanchesActionTypes';
 import S from '../enums/States';
 
 const initialState = {
-  ingredientes: [],
+  lanches: [],
   state: S.INITIAL,
   error: null,
 };
@@ -18,12 +18,12 @@ export default (state = initialState, action) => {
     case T.FETCHED:
       return {
         state: S.FETCHED,
-        ingredientes: action.payload,
+        lanches: action.payload,
         error: null,
       };
     case T.ERROR:
       return {
-        ingredientes: [],
+        lanches: [],
         state: S.ERROR,
         error: action.payload,
       };

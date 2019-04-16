@@ -1,5 +1,5 @@
 import axios from 'axios';
-import T from '../enums/IngredientesActionTypes';
+import T from '../enums/LanchesActionTypes';
 
 if (process.env.NODE_ENV === 'development') {
   axios.defaults.baseURL = 'http://localhost';
@@ -8,11 +8,11 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 
-export function ObtemTodosIngredientes() {
+export function ObtemTodosLanches() {
   return (dispatch) => {
     dispatch({ type: T.FETCH_ALL });
     axios
-      .get('/api/ingredientes')
+      .get('/api/lanches')
       .then((request) => {
         dispatch({ type: T.FETCHED, payload: request.data });
       })

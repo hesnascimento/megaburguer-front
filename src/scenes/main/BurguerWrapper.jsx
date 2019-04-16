@@ -12,14 +12,16 @@ class BurgueWrapper extends Component {
   }
 
   render() {
-    const { ingredientes, nome } = this.props;
+    const { ingredientes, nome, preco } = this.props;
     return (
       <div
         className="burguer-wrapper bg-dark col-md-3 col-sm-2 col-xs-12"
         style={{
           padding: '2em',
           marginTop: '20px',
-          marginInlineEnd: '15px',
+          borderStyle: 'solid',
+          borderWidth: '2px',
+          borderColor: '#202020',
         }}
       >
         <div className="row">
@@ -36,7 +38,7 @@ class BurgueWrapper extends Component {
         </div>
         <div className="row">
           <div className="col-sm nome-label text-center text-success font-weight-light">
-            Valor Base R$ 8,90
+            Valor Base R$ {preco}
           </div>
         </div>
         <div className="row">
