@@ -1,7 +1,8 @@
 import axios from 'axios';
 import T from '../enums/LanchesActionTypes';
+import urlconf from '../../urlconf'
 
-axios.defaults.baseURL = "https://api-megaburguer.herokuapp.com/";
+axios.defaults.baseURL = urlconf;
 
 export function ObtemTodosLanches() {
   return (dispatch) => {
